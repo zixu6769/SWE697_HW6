@@ -24,6 +24,8 @@ public class McasTest {
 		
 	}
 	
+	//D1 - ((state == State.INACTIVE) && !autopilotOn && !flapsDown)
+	//    TTF = F  =>state remains inactive	
 	@Test
 	public void testRow4() {
 		autoPilot = true;
@@ -37,7 +39,8 @@ public class McasTest {
 
 	}
 	
-	//((state == State.ARMED) && (autopilotOn || flapsDown)) TTF = T =>state becomes inactive
+	//D2 - ((state == State.ARMED) && (autopilotOn || flapsDown)) 
+	//	TTF = T =>state becomes inactive
 	@Test
 	public void testRow12() {
 		autoPilot = false;
